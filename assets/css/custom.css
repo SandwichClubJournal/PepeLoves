@@ -1,0 +1,724 @@
+/* ===================================================================
+   #PepeLoves - Custom Modern Design Stylesheet (PP2)
+   =================================================================== */
+
+:root {
+    --primary-pink: #ff4081;
+    --primary-pink-hover: #ff79b0;
+    --accent-glow: rgba(255, 64, 129, 0.4);
+    --dark-bg: #0c0d14;
+    --glass-bg: rgba(18, 20, 32, 0.82);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-pink: rgba(255, 64, 129, 0.35);
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --text-dim: #94a3b8;
+}
+
+/* Global Reset & Typography */
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+body {
+    font-family: "Cabin", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .brand-heading {
+    font-family: "Cabin", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+p, .lead-text {
+    font-family: "Cabin", sans-serif;
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+
+a:hover, a:focus {
+    color: var(--primary-pink-hover);
+    text-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Universal Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible,
+.btn-pepe:focus-visible,
+.vault-logo-btn:focus-visible,
+.social-card:focus-visible,
+.footer-attribution-link:focus-visible,
+.music-toggle-btn:focus-visible,
+.back-to-top:focus-visible {
+    outline: 2px solid var(--primary-pink) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 14px var(--accent-glow) !important;
+}
+
+/* ===================================================================
+   Navbar Customizations
+   =================================================================== */
+#mainNav {
+    background: rgba(12, 13, 20, 0.85) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.35s ease;
+    padding: 14px 0;
+    z-index: 1040;
+}
+
+#mainNav.navbar-shrink {
+    background: rgba(10, 11, 16, 0.96) !important;
+    padding: 10px 0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid var(--glass-border-pink);
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #fff !important;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+#mainNav .navbar-brand:hover {
+    transform: scale(1.03);
+}
+
+#mainNav .navbar-brand .logo-img {
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 2px 6px rgba(255, 64, 129, 0.5));
+}
+
+#mainNav .nav-link {
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
+    padding: 8px 16px !important;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+    color: #fff !important;
+    background: rgba(255, 64, 129, 0.18) !important;
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.25);
+}
+
+#mainNav .nav-link.nav-heart {
+    color: var(--primary-pink) !important;
+    font-size: 1.15rem;
+    padding: 6px 14px !important;
+}
+
+#mainNav .nav-link.nav-heart:hover {
+    color: #fff !important;
+    background: var(--primary-pink) !important;
+    transform: scale(1.15);
+}
+
+#mainNav .navbar-toggler {
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+/* ===================================================================
+   Hero / Masthead Section
+   =================================================================== */
+.masthead {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 140px 0 80px;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        background-attachment: fixed;
+    }
+}
+
+.masthead-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 13, 20, 0.55) 0%, rgba(12, 13, 20, 0.85) 75%, var(--dark-bg) 100%);
+    z-index: 1;
+}
+
+.masthead .container {
+    position: relative;
+    z-index: 2;
+}
+
+.brand-heading-large {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #ffffff 30%, #ff85a2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text-custom {
+    font-size: clamp(1.2rem, 3vw, 1.9rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto 36px;
+    line-height: 1.5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.scroll-indicator-wrap {
+    margin-top: 20px;
+}
+
+.scroll-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--glass-border);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    animation: bounceUpDown 2.2s infinite;
+}
+
+.scroll-indicator:hover {
+    border-color: var(--primary-pink);
+    color: var(--primary-pink);
+    background: rgba(255, 64, 129, 0.15);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+@keyframes bounceUpDown {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(5px); }
+}
+
+/* ===================================================================
+   Content Sections General
+   =================================================================== */
+.content-section {
+    position: relative;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .content-section {
+        padding: 130px 0;
+        background-attachment: fixed;
+    }
+}
+
+#about {
+    background-position: center center !important;
+}
+
+.section-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 13, 20, 0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+.content-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================================================
+   Glass Cards & Modern Containers
+   =================================================================== */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: clamp(28px, 5vw, 50px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: var(--glass-border-pink);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 64, 129, 0.15);
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--primary-pink);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.pepe-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-pink);
+    box-shadow: 0 0 20px var(--accent-glow);
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 auto 20px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.pepe-avatar:hover {
+    transform: rotate(10deg) scale(1.08);
+}
+
+/* QR Code Support Box */
+.qr-support-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed var(--glass-border-pink);
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 320px;
+    margin: 30px auto 0;
+    transition: transform 0.3s ease;
+}
+
+.qr-support-box:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 64, 129, 0.05);
+}
+
+.qr-support-box img {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-bottom: 14px;
+}
+
+.qr-support-badge {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--primary-pink);
+    text-transform: uppercase;
+}
+
+/* ===================================================================
+   Playground / Mega Section
+   =================================================================== */
+.vault-card {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(25, 28, 48, 0.85) 0%, rgba(15, 17, 30, 0.9) 100%);
+    border: 1px solid var(--glass-border-pink);
+    border-radius: 24px;
+    padding: clamp(36px, 5vw, 64px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+.vault-logo-btn {
+    display: inline-block;
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--glass-border);
+    transition: all 0.35s ease;
+    margin-top: 10px;
+}
+
+.vault-logo-btn:hover {
+    border-color: var(--primary-pink);
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 12px 30px var(--accent-glow);
+    background: rgba(255, 64, 129, 0.14);
+}
+
+.vault-logo-btn img {
+    width: 88px;
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* ===================================================================
+   Social & Follow Section (Balanced 2-Card Layout)
+   =================================================================== */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 660px;
+    margin: 36px auto 0;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    color: #fff !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+}
+
+.social-card:hover {
+    background: rgba(255, 64, 129, 0.12);
+    border-color: var(--primary-pink);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 64, 129, 0.25);
+}
+
+.social-card .icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-card:hover .icon-wrap {
+    transform: scale(1.15);
+    background: var(--primary-pink);
+    color: #fff;
+}
+
+.social-card .social-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.social-card .social-sub {
+    font-size: 0.86rem;
+    color: var(--text-dim);
+}
+
+/* ===================================================================
+   Satellite Map Section
+   =================================================================== */
+.map-wrapper {
+    position: relative;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    background: #000;
+}
+
+.map-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(12, 13, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+.map-clean iframe {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: none;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+/* ===================================================================
+   Floating SoundCloud Music Dock
+   =================================================================== */
+.music-dock {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1050;
+    max-width: 380px;
+    width: calc(100% - 48px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.music-toggle-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1052;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(18, 20, 32, 0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border-pink);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 64, 129, 0.3);
+    transition: all 0.25s ease;
+}
+
+.music-toggle-btn:hover {
+    background: var(--primary-pink);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(255, 64, 129, 0.6);
+}
+
+.music-toggle-btn .music-pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+    animation: musicPulseAnim 1.6s infinite ease-in-out;
+}
+
+@keyframes musicPulseAnim {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.music-player-panel {
+    background: rgba(18, 20, 32, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border-pink);
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    margin-bottom: 54px;
+    transform-origin: bottom right;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.music-dock.collapsed .music-player-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.85) translateY(20px);
+    pointer-events: none;
+}
+
+.music-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 10px;
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 10px;
+}
+
+.music-panel-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--primary-pink);
+    text-transform: uppercase;
+}
+
+.music-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.music-close-btn:hover {
+    color: #fff;
+}
+
+.music-player-panel iframe {
+    border-radius: 12px;
+    width: 100%;
+}
+
+/* ===================================================================
+   Footer & Back to Top
+   =================================================================== */
+footer {
+    background: #090a10;
+    border-top: 1px solid var(--glass-border);
+    padding: 44px 0 32px;
+}
+
+.footer-logo {
+    width: 36px;
+    height: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 2px 6px rgba(255, 64, 129, 0.4));
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.footer-attribution-link {
+    color: var(--primary-pink);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.footer-attribution-link:hover {
+    color: var(--primary-pink-hover);
+    text-shadow: 0 0 10px var(--accent-glow);
+    text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 1040;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(18, 20, 32, 0.9);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-pink);
+    color: #fff;
+    border-color: var(--primary-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+    .content-section {
+        padding: 70px 0;
+    }
+    
+    .glass-card {
+        padding: 24px 18px;
+    }
+
+    .brand-heading-large {
+        font-size: 2.8rem;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-dock {
+        right: 16px;
+        bottom: 16px;
+        max-width: calc(100% - 32px);
+    }
+}
